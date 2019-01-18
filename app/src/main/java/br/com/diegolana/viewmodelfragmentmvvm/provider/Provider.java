@@ -1,16 +1,13 @@
 package br.com.diegolana.viewmodelfragmentmvvm.provider;
 
 import android.os.Handler;
-
 import java.util.Random;
-
 import br.com.diegolana.viewmodelfragmentmvvm.model.User;
 
 public class Provider {
 
     private static final int ONE_SECOND = 1000;
-
-    Handler mHandler = new Handler();
+    private Handler mHandler = new Handler();
 
     public User getUser(boolean sleep) {
         User user = new User();
@@ -52,12 +49,10 @@ public class Provider {
 
     private String randText() {
         Random generator = new Random();
-        StringBuilder randomStringBuilder = new StringBuilder();
         int randomLength = generator.nextInt(100);
 
         return ""+randomLength;
     }
-
 
     public interface UserCallBack {
         void receiveUser(User user);

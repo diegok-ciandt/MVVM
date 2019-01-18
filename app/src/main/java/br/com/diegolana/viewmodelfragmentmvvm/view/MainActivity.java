@@ -2,7 +2,6 @@ package br.com.diegolana.viewmodelfragmentmvvm.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import br.com.diegolana.viewmodelfragmentmvvm.R;
 
 public class MainActivity extends AppCompatActivity {

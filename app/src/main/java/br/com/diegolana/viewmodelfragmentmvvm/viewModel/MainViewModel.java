@@ -1,6 +1,5 @@
 package br.com.diegolana.viewmodelfragmentmvvm.viewModel;
 
-
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 import br.com.diegolana.viewmodelfragmentmvvm.model.User;
@@ -13,7 +12,6 @@ public class MainViewModel extends ViewModel {
     public final MutableLiveData<User> userLiveData = new MutableLiveData<>();
 
     public MainViewModel() {
-        // trigger user load.
         provider = new Provider();
     }
 
@@ -31,7 +29,7 @@ public class MainViewModel extends ViewModel {
         }
     };
 
-    public void doBackgoundAction() {
+    public void doBackgroundAction() {
         provider.getUser(true,userCallBack);
     }
 
@@ -42,7 +40,5 @@ public class MainViewModel extends ViewModel {
     private User loadUser(boolean sleep) {
         return provider.getUser(sleep);
     }
-
-
 
 }
