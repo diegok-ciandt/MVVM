@@ -1,4 +1,4 @@
-package br.com.diegolana.viewmodelfragmentmvvm.View;
+package br.com.diegolana.viewmodelfragmentmvvm.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

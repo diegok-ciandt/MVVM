@@ -1,4 +1,4 @@
-package br.com.diegolana.viewmodelfragmentmvvm.View;
+package br.com.diegolana.viewmodelfragmentmvvm.view;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import br.com.diegolana.viewmodelfragmentmvvm.R;
-import br.com.diegolana.viewmodelfragmentmvvm.ViewModel.MainViewModel;
+import br.com.diegolana.viewmodelfragmentmvvm.viewModel.MainViewModel;
 import br.com.diegolana.viewmodelfragmentmvvm.model.User;
 
 public class MainFragment extends Fragment {
@@ -37,15 +39,25 @@ public class MainFragment extends Fragment {
         mViewModel.userLiveData.observe(this, new Observer<User>() {
               @Override
               public void onChanged(@Nullable User data) {
-                  // update ui.
+                  TextView text = getView().findViewById(R.id.message);
+                  text.setText(data.getFistName());
               }
           });
-          getView().findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
-              @Override
-              public void onClick(View v) {
-                  mViewModel.doAction();
-              }
-          });
+
+        getView().findViewById(R.id.button_bk).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mViewModel.doBackgoundAction();
+            }
+        });
+
+        getView().findViewById(R.id.button_ui).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mViewModel.doUIAction();
+            }
+        });
+
     }
 
 }
