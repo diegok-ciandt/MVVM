@@ -32,13 +32,15 @@ public class MainFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
-        // TODO: Use the ViewModel
-        mViewModel.userLiveData.observe(this, new Observer<User>() {
+        mViewModel = ViewModelProviders.of(this.getActivity()).get(MainViewModel.class);
+
+        mViewModel.userLiveData.observe(this.getActivity(), new Observer<User>() {
               @Override
               public void onChanged(@Nullable User data) {
-                  TextView text = getView().findViewById(R.id.message);
-                  text.setText(data.getFistName());
+                  if (data != null) {
+                      TextView text = getView().findViewById(R.id.message);
+                      text.setText(data.getFistName());
+                  }
               }
           });
 
