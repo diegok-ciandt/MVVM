@@ -1,0 +1,7 @@
+
+psquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(æÏ½
+vsquid:UselessImportCheck"NRemove this unused import 'br.com.diegolana.viewmodelfragmentmvvm.model.User'.(œİŒ8×¥¦‡†-
+esquid:UselessImportCheck"<Remove this unused import 'android.arch.lifecycle.LiveData'.(Úò›8×¥¦‡†-
+jsquid:UselessImportCheck"<Remove this unused import 'android.arch.lifecycle.Observer'.(ŞƒşÖÿÿÿÿÿ8×¥¦‡†-
+gsquid:UselessImportCheck"?Remove this unused import 'android.support.annotation.NonNull'.(¼Åß8×¥¦‡†-
+ksquid:UselessImportCheck"BRemove this unused import 'android.arch.lifecycle.LifecycleOwner'.(ßŒò×8×¥¦‡†-
