@@ -14,7 +14,7 @@ import br.com.diegolana.viewmodelfragmentmvvm.viewModel.MainViewModel;
 import br.com.diegolana.viewmodelfragmentmvvm.MainActivityBinding;
 
 public class MainActivity extends AppCompatActivity {
-    private MainViewModel mViewModel;
+    private MainViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupViewModel() {
-        mViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
 
-        mViewModel.userLiveData.observe(this, new Observer<User>() {
+        viewModel.getUserLiveData().observe(this, new Observer<User>() {
             @Override
             public void onChanged(@Nullable User data) {
                 View progressBar = findViewById(R.id.progress_bar);

@@ -2,25 +2,25 @@ package br.com.diegolana.viewmodelfragmentmvvm.model;
 
 public class User {
 
-    private String fistName = "A";
+    private String firstName = "A";
     private String lastName = "B";
     private int age = 987;
 
     public User() {
     }
 
-    public User(String fistName, String lastName, int age) {
-        this.fistName = fistName;
+    public User(String firstName, String lastName, int age) {
+        this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
     }
 
-    public String getFistName() {
-        return fistName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFistName(String fistName) {
-        this.fistName = fistName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {

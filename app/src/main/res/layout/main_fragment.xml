@@ -8,9 +8,6 @@
         <variable
             name="mainViewModel"
             type="br.com.diegolana.viewmodelfragmentmvvm.viewModel.MainViewModel" />
-        <variable
-            name="user"
-            type="br.com.diegolana.viewmodelfragmentmvvm.model.User" />
     </data>
     <LinearLayout
         android:orientation="vertical"
@@ -58,16 +55,7 @@
             android:id="@+id/auto_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{mainViewModel.user.fistName}"
-            android:textSize="20dp"
-            android:layout_margin="10dp"
-            android:layout_gravity="center" />
-
-        <TextView
-            android:id="@+id/user_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{user.fistName}"
+            android:text="@{mainViewModel.userLiveData.firstName}"
             android:textSize="20dp"
             android:layout_margin="10dp"
             android:layout_gravity="center" />

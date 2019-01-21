@@ -7,11 +7,11 @@ import br.com.diegolana.viewmodelfragmentmvvm.model.User;
 public class Provider {
 
     private static final int ONE_SECOND = 1000;
-    private Handler mHandler = new Handler();
+    private Handler handler = new Handler();
 
     public User getUser(boolean sleep) {
         User user = new User();
-        user.setFistName(randText());
+        user.setFirstName(randText());
 
         if (sleep) {
             sleep(ONE_SECOND);
@@ -29,7 +29,7 @@ public class Provider {
             @Override
             public void run () {
                 final User user = getUser(sleep);
-                mHandler.post(new Runnable() {
+                handler.post(new Runnable() {
                     @Override
                     public void run () {
                         userCallBack.receiveUser(user);

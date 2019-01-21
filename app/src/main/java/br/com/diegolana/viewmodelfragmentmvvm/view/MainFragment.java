@@ -18,7 +18,7 @@ import br.com.diegolana.viewmodelfragmentmvvm.model.User;
 
 public class MainFragment extends Fragment {
 
-    private MainViewModel mViewModel;
+    private MainViewModel viewModel;
 
     public static MainFragment newInstance() {
         return new MainFragment();
@@ -30,9 +30,9 @@ public class MainFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
 
-        mViewModel = ViewModelProviders.of(this.getActivity()).get(MainViewModel.class);
+        viewModel = ViewModelProviders.of(this.getActivity()).get(MainViewModel.class);
         MainFragmentBinding binding = DataBindingUtil.inflate(inflater, R.layout.main_fragment, container, false);
-        binding.setMainViewModel(mViewModel);
+        binding.setMainViewModel(viewModel);
 
         setupDataBinding();
 
@@ -43,12 +43,12 @@ public class MainFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        mViewModel.userLiveData.observe(this.getActivity(), new Observer<User>() {
+        viewModel.getUserLiveData().observe(this.getActivity(), new Observer<User>() {
               @Override
               public void onChanged(@Nullable User data) {
                   if (data != null) {
                       TextView text = getView().findViewById(R.id.message);
-                      text.setText(data.getFistName());
+                      text.setText(data.getFirstName());
                   }
               }
           });
@@ -56,14 +56,14 @@ public class MainFragment extends Fragment {
         getView().findViewById(R.id.button_bk).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mViewModel.doBackgroundAction();
+                viewModel.doBackgroundAction();
             }
         });
 
         getView().findViewById(R.id.button_ui).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mViewModel.doUIAction();
+                viewModel.doUIAction();
             }
         });
 
