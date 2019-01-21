@@ -26,6 +26,8 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+
+        setupDataBinding();
         return inflater.inflate(R.layout.main_fragment, container, false);
     }
 
@@ -58,6 +60,15 @@ public class MainFragment extends Fragment {
             }
         });
 
+    }
+
+
+    private void setupDataBinding() {
+
+//        ActivityUserProfileBinding activityUserProfileBinding = DataBindingUtil.setContentView(this, R.layout.activity_user_profile);
+//        UserProfileModel userProfileModel = new UserProfileModel("Emily Lin", ContextCompat.getDrawable(this, R.mipmap.ic_launcher), 26);
+//        activityUserProfileBinding.setModel(userProfileModel);
+//        activityUserProfileBinding.setViewModel(new UserProfileViewModel(this));
     }
 
 }

@@ -2,9 +2,9 @@ package br.com.diegolana.viewmodelfragmentmvvm.model;
 
 public class User {
 
-    private String fistName;
-    private String lastName;
-    private int age;
+    private String fistName = "A";
+    private String lastName = "B";
+    private int age = 987;
 
     public User() {
     }
