@@ -2,6 +2,7 @@ package br.com.diegolana.viewmodelfragmentmvvm.view;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import br.com.diegolana.viewmodelfragmentmvvm.R;
 import br.com.diegolana.viewmodelfragmentmvvm.viewModel.MainViewModel;
+import br.com.diegolana.viewmodelfragmentmvvm.MainFragmentBinding;
 import br.com.diegolana.viewmodelfragmentmvvm.model.User;
 
 public class MainFragment extends Fragment {
@@ -27,14 +29,19 @@ public class MainFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
+
+        mViewModel = ViewModelProviders.of(this.getActivity()).get(MainViewModel.class);
+        MainFragmentBinding binding = DataBindingUtil.inflate(inflater, R.layout.main_fragment, container, false);
+        binding.setMainViewModel(mViewModel);
+
         setupDataBinding();
-        return inflater.inflate(R.layout.main_fragment, container, false);
+
+        return binding.getRoot();
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this.getActivity()).get(MainViewModel.class);
 
         mViewModel.userLiveData.observe(this.getActivity(), new Observer<User>() {
               @Override
