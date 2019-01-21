@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity);
 
         MainActivityBinding binding = DataBindingUtil.setContentView(this, R.layout.main_activity);
         binding.setLifecycleOwner(this);
@@ -31,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         setupViewModel();
-
+        binding.setMainViewModel(viewModel);
+        viewModel.doBackgroundAction();
     }
 
     private void setupViewModel() {

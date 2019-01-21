@@ -33,6 +33,7 @@ public class MainFragment extends Fragment {
         viewModel = ViewModelProviders.of(this.getActivity()).get(MainViewModel.class);
         MainFragmentBinding binding = DataBindingUtil.inflate(inflater, R.layout.main_fragment, container, false);
         binding.setMainViewModel(viewModel);
+        binding.setLifecycleOwner(this);
 
         setupDataBinding();
 
